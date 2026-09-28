@@ -1,0 +1,7 @@
+{
+  "name": "clinicflow",
+  "private": true,
+  "workspaces": ["apps/api", "apps/patient-web", "apps/staff-web"],
+  "scripts": { "dev": "concurrently -n api,patient,staff -c green,blue,magenta \"npm:dev:api\" \"npm:dev:patient\" \"npm:dev:staff\"", "dev:api": "npm --workspace apps/api run dev", "dev:patient": "npm --workspace apps/patient-web run dev", "dev:staff": "npm --workspace apps/staff-web run dev" },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}
